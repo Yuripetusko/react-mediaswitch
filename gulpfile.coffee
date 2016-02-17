@@ -29,15 +29,12 @@ gulp.task 'build:browser', ['build:node'], ->
   gulp.src './lib/*.js'
     .pipe browserify
       standalone: 'mediaswitch'
-      transform: ['browserify-shim']
     .pipe rename('react-mediaswitch.js')
     .pipe gulp.dest('./standalone/')
 
 gulp.task 'build:tests', ->
   gulp.src './test/**/*.?(lit)coffee'
     .pipe coffee().on('error', gutil.log)
-    .pipe browserify
-      transform: ['browserify-shim']
     .pipe gulp.dest('./test/')
 
 # A server for the test page
