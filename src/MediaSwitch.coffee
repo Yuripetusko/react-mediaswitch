@@ -1,5 +1,4 @@
 React = require 'react'
-{addons: {cloneWithProps}} = require 'react/addons'
 eq = require './eq'
 extend = require 'xtend'
 
